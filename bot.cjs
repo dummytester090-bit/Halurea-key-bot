@@ -127,3 +127,11 @@ client.on('interactionCreate', async interaction => {
 });
 
 client.login(process.env.DISCORD_TOKEN);
+
+const express = require('express');
+const app = express();
+const PORT = process.env.PORT || 3000;
+
+// Minimal route to satisfy Render
+app.get('/', (req, res) => res.send('Bot is running!'));
+app.listen(PORT, () => console.log(`Web server listening on port ${PORT}`));
